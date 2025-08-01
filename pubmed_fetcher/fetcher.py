@@ -2,7 +2,7 @@ import requests
 from typing import List
 from xml.etree import ElementTree as ET
 
-def fetch_pubmed_ids(query: str, retmax: int = 20) -> List[str]:
+def fetch_pubmed_ids(query: str, retmax: int = 40) -> List[str]:
     url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
     params = {'db': 'pubmed', 'term': query, 'retmode': 'xml', 'retmax': retmax}
     response = requests.get(url, params=params)
